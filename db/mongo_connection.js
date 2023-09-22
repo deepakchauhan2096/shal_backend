@@ -4,7 +4,7 @@ console.log("CURRENT_SERVER_IP : ",process.env.CURRENT_SERVER_IP)
 mongoose.set('strictQuery', false);
 module.exports = mongoose
 // .connect(`mongodb://verveuser:vervebot123@${process.env.CURRENT_SERVER_IP}/vervedb`, {
-.connect(`mongodb://verveuser:vervebot123@127.0.0.1:27017/vervedb`, {
+.connect(`mongodb+srv://deepakchauhan:12345@cluster0.zq3mlyy.mongodb.net/vervedb`, {
   useUnifiedTopology: true,
   useNewUrlParser: true
 })
