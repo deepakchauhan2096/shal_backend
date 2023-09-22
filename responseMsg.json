@@ -1,0 +1,9 @@
+{
+    "success": "successfull",
+    "failed": "failed",
+    "invalid": "Invalid Data",
+    "userAlreadyExist":"User Already Exist",
+    "memberAlreadyExist":"Member Already Exist",
+    "clinetAlreadyExist":"Member Already Exist",
+    "ProjectExists":"Project Already Exists"
+}
