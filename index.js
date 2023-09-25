@@ -25,6 +25,9 @@ const corsOptions = {
   
 app.use(cors(corsOptions));
 
+app.options('*', cors()); // Enable CORS for OPTIONS requests
+
+
 
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true, parameterLimit: 50000, limit: "50mb" }));
