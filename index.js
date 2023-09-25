@@ -47,7 +47,6 @@ const msgObject = require('./responseMsg.json')
 const Schema = mongoose.Schema;
 
 
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
 
 app.use(
