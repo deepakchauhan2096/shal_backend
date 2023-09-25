@@ -6,8 +6,9 @@ const counterSchema = {
     type: String
   },
   seq: {
-    type: Number
-  }
+    type: Number,
+    required: true,
+  },
 };
 
 
