@@ -18,7 +18,7 @@ const openai = new OpenAIApi(configuration)
 
 const upload = multer({ dest: 'uploads/' });
 
-  
+
 app.use(cors({
     origin: 'https://teal-sherbet-de8014.netlify.app'
 }));
@@ -47,6 +47,20 @@ const msgObject = require('./responseMsg.json')
 const Schema = mongoose.Schema;
 
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+
+app.use(
+    '/api',
+    createProxyMiddleware({
+        target: 'https://teal-sherbet-de8014.netlify.app',
+        changeOrigin: true,
+    })
+);
+
+
+
+
 // app.use(express.static(path.join(__dirname, 'build')));
 
 // app.get('/', function (req, res) {
@@ -58,7 +72,7 @@ const Schema = mongoose.Schema;
 //     // Check if the request URL is for the index.html file
 //     if (req.url === '/index.html') {
 //       const filePath = path.join('/opt/render/project/src/build', 'index.html');
-  
+
 //       // Read the file asynchronously
 //       fs.readFile(filePath, 'utf8', (err, data) => {
 //         if (err) {

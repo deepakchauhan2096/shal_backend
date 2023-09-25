@@ -1,4 +1,5 @@
 {
+  "proxy": "https://teal-sherbet-de8014.netlify.app",
   "name": "workspace",
   "version": "1.0.0",
   "description": "",
