@@ -17,15 +17,13 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const upload = multer({ dest: 'uploads/' });
-// app.use(cors());
 
-const corsOptions = {
-    origin: 'https://teal-sherbet-de8014.netlify.app/'
-  };
   
-app.use(cors(corsOptions));
+app.use(cors({
+    origin: 'https://teal-sherbet-de8014.netlify.app'
+}));
 
-app.options('*', cors()); // Enable CORS for OPTIONS requests
+
 
 
 
