@@ -38,11 +38,36 @@ const msgObject = require('./responseMsg.json')
 const Schema = mongoose.Schema;
 
 
-app.use(express.static(path.join(__dirname, 'build')));
+// app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, '/opt/render/project/src/build', 'index.html'));
+// });
+
+
+// const server = http.createServer((req, res) => {
+//     // Check if the request URL is for the index.html file
+//     if (req.url === '/index.html') {
+//       const filePath = path.join('/opt/render/project/src/build', 'index.html');
+  
+//       // Read the file asynchronously
+//       fs.readFile(filePath, 'utf8', (err, data) => {
+//         if (err) {
+//           // Handle any errors, such as the file not existing
+//           res.writeHead(404, { 'Content-Type': 'text/plain' });
+//           res.end('File not found');
+//         } else {
+//           // Send the file contents as the response
+//           res.writeHead(200, { 'Content-Type': 'text/html' });
+//           res.end(data);
+//         }
+//       });
+//     } else {
+//       // Handle other requests, e.g., for other assets or routes
+//       res.writeHead(404, { 'Content-Type': 'text/plain' });
+//       res.end('Not Found');
+//     }
+//   });
 
 
 
