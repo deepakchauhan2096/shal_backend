@@ -20,7 +20,7 @@ const upload = multer({ dest: 'uploads/' });
 // app.use(cors());
 
 const corsOptions = {
-    origin: 'https://teal-sherbet-de8014.netlify.app/', 
+    origin: 'https://teal-sherbet-de8014.netlify.app/'
   };
   
 app.use(cors(corsOptions));
