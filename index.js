@@ -17,7 +17,15 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const upload = multer({ dest: 'uploads/' });
-app.use(cors());
+// app.use(cors());
+
+const corsOptions = {
+    origin: 'https://teal-sherbet-de8014.netlify.app/', 
+  };
+  
+app.use(cors(corsOptions));
+
+
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true, parameterLimit: 50000, limit: "50mb" }));
 const helmet = require('helmet');
