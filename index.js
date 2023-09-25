@@ -30,16 +30,6 @@ app.options('*', cors()); // Enable CORS for OPTIONS requests
 
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true, useNewUrlParser: true, parameterLimit: 50000, limit: "50mb" }));
-const helmet = require('helmet');
-app.use(
-    helmet.contentSecurityPolicy({
-        directives: {
-            defaultSrc: ["'self'", 'https:'],
-        },
-    })
-);
-const path = require('path');
-
 
 const mongoose = require('./db/mongo_connection')
 const mongoSchemaModel = require('./models/schema')
@@ -2568,7 +2558,7 @@ app.put('/update_subcontructor', middlewareFunctions.checkAuth, (req, res) => {
         })
     }
 })
-let PORT = process.env.PORT || 5001
+let PORT = 443 || 5001
 app.listen(PORT, () => {
     console.log(`Server Running on => `, PORT);
 });

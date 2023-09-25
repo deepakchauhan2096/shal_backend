@@ -9,7 +9,7 @@ module.exports = middlewareFunctions = {
     checkAuth: (req, res, next) => {
         try {
             console.log("header : ", req.headers.authorization_key)
-            if (req.headers.authorization_key == process.env.API_KEY) {
+            if (req.headers.authorization_key == "qzOUsBmZFgMDlwGtrgYypxUz") {
                 next()
             } else {
                 res.json({
