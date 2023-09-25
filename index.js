@@ -17,13 +17,14 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const upload = multer({ dest: 'uploads/' });
+// app.use(cors());
 
-
+  
 app.use(cors({
-    origin: 'https://teal-sherbet-de8014.netlify.app'
+     origin: 'https://teal-sherbet-de8014.netlify.app'
 }));
 
-
+app.options('*', cors()); // Enable CORS for OPTIONS requests
 
 
 
@@ -47,19 +48,6 @@ const msgObject = require('./responseMsg.json')
 const Schema = mongoose.Schema;
 
 
-
-
-app.use(
-    '/api',
-    createProxyMiddleware({
-        target: 'https://teal-sherbet-de8014.netlify.app',
-        changeOrigin: true,
-    })
-);
-
-
-
-
 // app.use(express.static(path.join(__dirname, 'build')));
 
 // app.get('/', function (req, res) {
@@ -71,7 +59,7 @@ app.use(
 //     // Check if the request URL is for the index.html file
 //     if (req.url === '/index.html') {
 //       const filePath = path.join('/opt/render/project/src/build', 'index.html');
-
+  
 //       // Read the file asynchronously
 //       fs.readFile(filePath, 'utf8', (err, data) => {
 //         if (err) {
